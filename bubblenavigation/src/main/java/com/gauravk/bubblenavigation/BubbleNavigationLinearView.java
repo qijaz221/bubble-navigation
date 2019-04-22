@@ -28,7 +28,6 @@ import android.widget.LinearLayout;
 import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * BubbleNavigationLinearView
@@ -293,6 +292,17 @@ public class BubbleNavigationLinearView extends LinearLayout implements View.OnC
             pendingBadgeUpdate.put(position, value);
         }
     }
+
+
+    public void addNavigationItem(BubbleToggleView item) {
+        if (bubbleNavItems == null) {
+            bubbleNavItems = new ArrayList<>();
+        }
+
+        bubbleNavItems.add(item);
+        updateMeasurementForItems();
+    }
+
 
     @Override
     public void onClick(View v) {
